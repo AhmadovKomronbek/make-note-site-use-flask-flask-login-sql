@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from os import path
+from os import path, getcwd
 from flask_login import LoginManager
 from flask import Blueprint
 
 db = SQLAlchemy()
-DB_NAME = "database.db"
+DB_NAME = path.join(getcwd(), "instance", "database.db")
 
 def create_app():
     app = Flask(__name__)
